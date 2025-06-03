@@ -1,8 +1,8 @@
 package org.labrad.types
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class TypeTest extends FunSuite {
+class TypeTest extends AnyFunSuite {
   test("patterns should be parsable") {
     val tests: Seq[(String, Pattern)] = Seq(
       // basic types

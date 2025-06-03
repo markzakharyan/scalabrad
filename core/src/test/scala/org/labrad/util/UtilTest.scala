@@ -1,8 +1,8 @@
 package org.labrad.util
 
-import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
 
-class UtilTest extends FunSuite {
+class UtilTest extends AnyFunSuite {
 
   test("interpolateEnvironmentVars interpolates defined values into strings") {
     val result = Util.interpolateEnvironmentVars(

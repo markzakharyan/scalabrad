@@ -7,11 +7,11 @@ import org.labrad.data._
 import org.labrad.manager.ManagerUtils
 import org.labrad.types._
 import org.labrad.util.{Logging, Util}
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 import scala.concurrent.Await
 import scala.concurrent.duration._
 
-class ClientTest extends FunSuite {
+class ClientTest extends AnyFunSuite {
 
   def testWithClient(name: String)(func: Client => Unit) = test(name) {
     ManagerUtils.withManager() { m =>

@@ -19,7 +19,7 @@ object Parsing {
           fail(cfg.failure, index)
 
         case Some(result) =>
-          success(cfg.success, (), index + result.end, Nil, false)
+          success(cfg.success, (), index + result.end, Set.empty, false)
       }
     }
   }

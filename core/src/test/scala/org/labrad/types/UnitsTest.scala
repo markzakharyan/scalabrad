@@ -1,8 +1,8 @@
 package org.labrad.types
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class RatioTest extends FunSuite {
+class RatioTest extends AnyFunSuite {
   test("ratios are always in lowest terms") {
     val r = Ratio(3, 6)
     assert(r.num == 1)
@@ -64,7 +64,7 @@ class RatioTest extends FunSuite {
   }
 }
 
-class UnitsTest extends FunSuite {
+class UnitsTest extends AnyFunSuite {
   test("basic units can be parsed") {
     val tests = Seq(
         "m",

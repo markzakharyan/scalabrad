@@ -4,9 +4,9 @@ import java.io.File
 import java.net.URI
 import org.labrad.crypto.CertConfig
 import org.labrad.util.cli.Environment
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class ManagerConfigTest extends FunSuite {
+class ManagerConfigTest extends AnyFunSuite {
 
   // If not otherwise specified, use empty environment for these tests.
   implicit val defaultEnv = Environment()

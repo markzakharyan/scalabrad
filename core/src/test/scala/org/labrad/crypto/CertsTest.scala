@@ -1,8 +1,8 @@
 package org.labrad.crypto
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class CertsTest extends FunSuite {
+class CertsTest extends AnyFunSuite {
 
   /**
    * Verify that fingerprint matches what we get from openssl.

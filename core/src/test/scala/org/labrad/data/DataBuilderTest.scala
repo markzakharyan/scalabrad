@@ -3,9 +3,9 @@ package org.labrad.data
 import java.nio.ByteOrder
 import java.util.{Date, Random}
 import org.labrad.types._
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class DataBuilderTest extends FunSuite {
+class DataBuilderTest extends AnyFunSuite {
   val rand = new Random
 
   def testBothEndian(name: String)(func: ByteOrder => Unit) {

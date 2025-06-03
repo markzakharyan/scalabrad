@@ -5,7 +5,7 @@ import org.labrad.annotations._
 import org.labrad.data._
 import org.labrad.manager.ManagerUtils
 import org.labrad.util.{Await, Logging}
-import org.scalatest.fixture.FunSuite
+import org.scalatest.funsuite.FixtureAnyFunSuite
 import scala.collection._
 import scala.concurrent.duration._
 
@@ -195,7 +195,7 @@ class TestCtx(
   }
 }
 
-class ServerTest extends FunSuite {
+class ServerTest extends FixtureAnyFunSuite {
 
   import ManagerUtils._
 

@@ -2,9 +2,9 @@ package org.labrad.data
 
 import java.nio.ByteOrder
 import org.labrad.types._
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class HydrantTest extends FunSuite {
+class HydrantTest extends AnyFunSuite {
 
   def testHydrant(tag: String) = test(tag) {
     val t = Type(tag)

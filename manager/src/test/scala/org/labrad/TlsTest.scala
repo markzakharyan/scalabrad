@@ -4,11 +4,11 @@ import java.io.File
 import org.labrad.data._
 import org.labrad.manager.{ManagerUtils, TlsPolicy}
 import org.labrad.types._
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 import scala.concurrent.Await
 import scala.concurrent.duration._
 
-class TlsTest extends FunSuite {
+class TlsTest extends AnyFunSuite {
 
   import ManagerUtils._
 
