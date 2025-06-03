@@ -6,7 +6,7 @@ import org.labrad.data._
 import org.labrad.manager.{ClientActor, Hub, ManagerImpl, ServerActor}
 import org.labrad.types.Pattern
 import org.labrad.util.Logging
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 import scala.concurrent.Future
 import scala.reflect.ClassTag
 import scala.reflect.runtime.{ currentMirror => cm, universe => ru }
@@ -303,7 +303,7 @@ class ReturnAnnotations extends Testable("allow return types to be annotated") {
 //  )
 //}
 
-class ReflectTest extends FunSuite with Logging {
+class ReflectTest extends AnyFunSuite with Logging {
 
   def same(pa: Pattern, pb: Pattern): Boolean = (pa accepts pb) && (pb accepts pa)
 
@@ -450,7 +450,7 @@ class Adder {
   def add(a: Int, b: Int) = a + b
 }
 
-class InferenceTest extends FunSuite with Logging {
+class InferenceTest extends AnyFunSuite with Logging {
 
   def testInference[T: ru.TypeTag](expected: Pattern, values: T*): Unit = {
     import SettingHandler._
@@ -501,7 +501,7 @@ class InferenceTest extends FunSuite with Logging {
   testInferenceArray[Array[String]](Pattern("*s"), Array("abc"), Array())
 }
 
-class InvokeTest extends FunSuite with Logging {
+class InvokeTest extends AnyFunSuite with Logging {
   val (_, bindDefaultArgs) = Reflect.makeHandler[DefaultArgs]
 
   test("can invoke method with some args having default values") {

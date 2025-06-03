@@ -9,7 +9,7 @@ A scala interface to labrad.
 Binary distributions of scalabrad can be downloaded from the [release page](https://github.com/labrad/scalabrad/releases/tag/v0.8.3).
 Simply download and install the archive file for the version you want and unpack it on your machine.
 For example, if you download [scalabrad-0.8.3.tar.gz](https://github.com/labrad/scalabrad/releases/download/v0.8.3/scalabrad-0.8.3.tar.gz) and untar it in some directory `$PATH/`, then you can run `$PATH/scalabrad-0.8.3/bin/labrad` to start the manager.
-You'll need to have Java 8 installed on your system, but all other dependencies are included in the package.
+You'll need to have Java 17 or later installed on your system, but all other dependencies are included in the package.
 Windows `.bat` files are also included in the distribution, though you may need a tool like 7-Zip to extract the `.tar.gz` archive.
 
 Invoke the manager with the `--help` option to see documentation of the command line parameters and environment variables that can be used to configure the manager.

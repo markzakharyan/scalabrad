@@ -3,11 +3,12 @@ package org.labrad
 import org.labrad.data._
 import org.labrad.manager.ManagerUtils
 import org.labrad.util.Await
-import org.scalatest.{FunSuite, Tag}
-import org.scalatest.concurrent.AsyncAssertions
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.Tag
+import org.scalatest.concurrent.Waiters
 import org.scalatest.time.SpanSugar._
 
-class ManagerTest extends FunSuite with AsyncAssertions {
+class ManagerTest extends AnyFunSuite with Waiters {
 
   import ManagerUtils._
 

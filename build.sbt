@@ -5,8 +5,8 @@ lazy val commonSettings = Seq(
     IO.read(file("core/src/main/resources/org/labrad/version.txt")).trim()
   },
 
-  scalaVersion := "2.11.7",
-  javacOptions ++= Seq("-source", "1.7", "-target", "1.7"),
+  scalaVersion := "2.11.12",
+  javacOptions ++= Seq("-source", "17", "-target", "17"),
 
   scalacOptions ++= Seq(
     "-deprecation",
@@ -18,20 +18,21 @@ lazy val commonSettings = Seq(
   // dependencies
   libraryDependencies ++= Seq(
     "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-    "com.lihaoyi" %% "fastparse" % "0.3.5",
+    "com.lihaoyi" %% "fastparse" % "0.3.7",
     "org.clapper" %% "argot" % "1.0.4",
-    "io.netty" % "netty-all" % "4.1.1.Final",
-    "joda-time" % "joda-time" % "2.1",
-    "org.joda" % "joda-convert" % "1.2",
-    "org.slf4j" % "slf4j-api" % "1.7.2",
-    "ch.qos.logback" % "logback-classic" % "1.0.6",
-    "com.typesafe.play" %% "anorm" % "2.4.0-M2",
-    "org.xerial" % "sqlite-jdbc" % "3.8.11.2",
-    "org.bouncycastle" % "bcprov-jdk15on" % "1.52",
-    "org.bouncycastle" % "bcpkix-jdk15on" % "1.52",
-    "org.mindrot" % "jbcrypt" % "0.3m",
-    "com.google.api-client" % "google-api-client" % "1.19.0",
-    "com.google.http-client" % "google-http-client" % "1.19.0"
+    "io.netty" % "netty-all" % "4.1.122.Final",
+    "joda-time" % "joda-time" % "2.13.1",
+    "org.joda" % "joda-convert" % "2.2.4",
+    "org.slf4j" % "slf4j-api" % "2.0.9",
+    "ch.qos.logback" % "logback-classic" % "1.5.18",
+    "com.typesafe.play" %% "anorm" % "2.5.3",
+    "org.xerial" % "sqlite-jdbc" % "3.49.1.0",
+    "org.bouncycastle" % "bcprov-jdk15on" % "1.70",
+    "org.bouncycastle" % "bcpkix-jdk15on" % "1.70",
+    "org.mindrot" % "jbcrypt" % "0.4",
+    "com.google.api-client" % "google-api-client" % "2.8.0",
+    "com.google.http-client" % "google-http-client" % "1.47.0",
+    "com.google.http-client" % "google-http-client-jackson2" % "1.47.0"
   ),
 
   // When running, connect std in and tell manager to stop on EOF (ctrl+D).
@@ -42,7 +43,7 @@ lazy val commonSettings = Seq(
 
   // testing
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "2.2.6" % "test"
+    "org.scalatest" %% "scalatest" % "3.2.19" % "test"
   ),
 
   Test / fork := true,

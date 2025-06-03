@@ -2,9 +2,9 @@ package org.labrad.manager.auth
 
 import org.labrad.registry._
 import org.labrad.util.Files
-import org.scalatest.fixture.FunSuite
+import org.scalatest.funsuite.FixtureAnyFunSuite
 
-class AuthStoreTest extends FunSuite {
+class AuthStoreTest extends FixtureAnyFunSuite {
 
   case class Fixture(store: AuthStore, globalPassword: String)
   type FixtureParam = Fixture

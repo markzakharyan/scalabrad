@@ -2,10 +2,10 @@ package org.labrad
 
 import java.net.URI
 import org.labrad.util.cli.Environment
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 import scala.util.{Failure, Success}
 
-class ServerConfigTest extends FunSuite {
+class ServerConfigTest extends AnyFunSuite {
 
   // If not otherwise specified, use empty environment for these tests.
   implicit val defaultEnv = Environment()
