@@ -73,5 +73,7 @@ lazy val manager = project.in(file("manager"))
       "labrad-sql-test" -> "org.labrad.registry.SQLTest"
     ),
     packGenerateWindowsBatFile := true,
-    packArchivePrefix := "scalabrad"
+    packArchivePrefix := "scalabrad",
+    // Only build tar.gz archives; skip .zip
+    packArchive := Seq(packArchiveTgz.value)
   )
