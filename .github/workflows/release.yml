@@ -1,0 +1,54 @@
+name: Build and Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Cache sbt
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.ivy2/cache
+            ~/.sbt
+            ~/.cache/coursier
+          key: ${{ runner.os }}-sbt-${{ hashFiles('**/build.sbt') }}
+      - name: Build package
+        run: sbt manager/packArchive
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: scalabrad-${{ matrix.os }}
+          path: manager/target/scalabrad-*.*
+          if-no-files-found: error
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          path: dist
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          name: ${{ github.ref_name }}
+          tag: ${{ github.ref_name }}
+          body: |
+            Update dependencies and improve macOS compatibility.
+          artifacts: dist/**
