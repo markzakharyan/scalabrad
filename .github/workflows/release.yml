@@ -14,11 +14,11 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v3
-      - name: Set up JDK
-        uses: actions/setup-java@v3
+      - name: Set up JDK and sbt
+        uses: coursier/setup-action@v1
         with:
-          distribution: temurin
-          java-version: '17'
+          jvm: temurin:17
+          apps: sbt
       - name: Cache sbt
         uses: actions/cache@v3
         with:
