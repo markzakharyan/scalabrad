@@ -1,0 +1,34 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK and sbt
+        uses: coursier/setup-action@v1
+        with:
+          jvm: temurin:17
+          apps: sbt
+      - name: Cache sbt
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.ivy2/cache
+            ~/.sbt
+            ~/.cache/coursier
+          key: ${{ runner.os }}-sbt-${{ hashFiles('**/build.sbt') }}
+      - name: Build package
+        run: sbt manager/packArchive
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: scalabrad
+          path: manager/target/scalabrad-*.*
+          if-no-files-found: error
