@@ -75,5 +75,5 @@ lazy val manager = project.in(file("manager"))
     packGenerateWindowsBatFile := true,
     packArchivePrefix := "scalabrad",
     // Only build tar.gz archives; skip .zip
-    packArchive := Seq(packArchiveTgz.value)
+    packArchive := Seq((Compile / packArchiveTgz).value)
   )
